@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Text to Realistic Video</title>
+  <!-- Google Font: Desinger -->
+  <link href="https://fonts.googleapis.com/css2?family=Desinger&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Desinger', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+      animation: backgroundFade 20s infinite alternate;
+    }
+
+    .glow-heading {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+      margin-top: 20px;
+      animation: floatText 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      animation: fadeInDown 1.2s ease-out;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      max-width: 600px;
+      width: 100%;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 20px;
+      border-radius: 15px;
+      border: none;
+      resize: none;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    button {
+      padding: 14px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 75, 43, 0.9);
+    }
+
+    .rainbow-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+      background: linear-gradient(45deg, #ff0066, #ffcc00, #33cc33, #00ccff, #6600cc);
+      background-size: 300% 300%;
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      transition: all 0.4s ease-in-out;
+      animation: rainbowMove 5s ease infinite;
+    }
+
+    .rainbow-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,255,255,0.8);
+    }
+
+    #output {
+      margin-top: 40px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      animation: zoomIn 1s ease-out;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #25d366, #128c7e);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
